@@ -2,6 +2,7 @@ package src;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -26,23 +27,15 @@ public class App {
 
     /**
      * Method that takes in a list, applies a condition on that list and prints the result
-     * @param persons
-     * @param condition
+     * @param persons - List of Person objects
+     * @param predicate - default Predicate functional interface that is applied on Person
      */
-    public static void printConditionally(List<Person> persons, Condition condition){
+    public static void printConditionally(List<Person> persons, Predicate<Person> predicate){
         for (Person person : persons) {
-            if (condition.test(person)){
+            if (predicate.test(person)){
                 System.out.println(person);
             }
         }
     }
 
-}
-
-/**
- * Represents a condition applicable on a Person
- */
-@FunctionalInterface
-interface Condition {
-    boolean test(Person p);
 }
