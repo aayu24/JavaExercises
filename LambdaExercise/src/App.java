@@ -17,27 +17,31 @@ public class App {
         people.sort((a,b)-> a.getLastName().compareTo(b.getLastName()));
         
         //Step-2: Create a method that prints all the elements in the list
-        printElements lambdaPrint = () -> {
-            for (Person person : people) {
+        printConditionally(people, p -> true);
+
+        //Step-3: Create a method that prints all people having lastName beginning with a C
+        printConditionally(people, p -> p.getLastName().startsWith("C"));
+
+    }
+
+    /**
+     * Method that takes in a list, applies a condition on that list and prints the result
+     * @param persons
+     * @param condition
+     */
+    public static void printConditionally(List<Person> persons, Condition condition){
+        for (Person person : persons) {
+            if (condition.test(person)){
                 System.out.println(person);
             }
-        };
-
-        lambdaPrint.print();
-        //Step-3: Create a method that prints all people having lastName beginning with a C
-        printElements lambdaPrintC = () -> {
-            for (Person person : people) {
-                if (person.getLastName().startsWith("C")){
-                    System.out.println(person);
-                }
-            }
-        };
-
-        lambdaPrintC.print();
+        }
     }
 
 }
 
-interface printElements {
-        public void print();
+/**
+ * Represents a condition applicable on a Person
+ */
+interface Condition {
+    boolean test(Person p);
 }
