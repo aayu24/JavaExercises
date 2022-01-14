@@ -14,8 +14,8 @@ public class App {
         ); 
 
         //Step-1: Sort list by lastName
-        people.sort((Person a, Person b)-> a.getLastName().compareTo(b.getLastName()));
-        System.out.println(people);
+        people.sort((a,b)-> a.getLastName().compareTo(b.getLastName()));
+        
         //Step-2: Create a method that prints all the elements in the list
         printElements lambdaPrint = () -> {
             for (Person person : people) {
@@ -36,7 +36,8 @@ public class App {
         lambdaPrintC.print();
     }
 
-    interface printElements {
+}
+
+interface printElements {
         public void print();
-    }
 }
