@@ -42,6 +42,7 @@ public class App {
 /**
  * Represents a condition applicable on a Person
  */
+@FunctionalInterface
 interface Condition {
     boolean test(Person p);
 }
