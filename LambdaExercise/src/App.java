@@ -14,7 +14,8 @@ public class App {
         ); 
 
         //Step-1: Sort list by lastName
-        
+        people.sort((Person a, Person b)-> a.getLastName().compareTo(b.getLastName()));
+        System.out.println(people);
         //Step-2: Create a method that prints all the elements in the list
 
         //Step-3: Create a method that prints all people having lastName beginning with a C
