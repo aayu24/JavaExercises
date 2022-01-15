@@ -19,10 +19,10 @@ public class App {
         people.sort((a,b)-> a.getLastName().compareTo(b.getLastName()));
         
         //Step-2: Create a method that prints all the elements in the list
-        printConditionally(people, p -> true, p -> System.out.println(p));
+        printConditionally(people, p -> true, System.out::println);
 
         //Step-3: Create a method that prints all people having lastName beginning with a C
-        printConditionally(people, p -> p.getLastName().startsWith("C"), p -> System.out.println(p));
+        printConditionally(people, p -> p.getLastName().startsWith("C"), System.out::println );
 
     }
 
