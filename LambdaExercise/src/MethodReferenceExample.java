@@ -14,7 +14,7 @@ public class MethodReferenceExample {
 
 
 /**
- * Can use method reference inside lambda in following cases
+ * Can use method reference when lamdba is of the following types
  * 1. () -> someFunc() 
  * 2. (p) -> someFunc(p)
  * 
